@@ -24,7 +24,7 @@ TLE.exporter = {
     var str = "";
     $.each(todown.tasklist, function(n, task) {
       $.each(task.filelist, function(l, file) {
-        if (file.downurl) str += "aria2c -c -s10 -x10 --out "+TLE.escape_command(file.title)+" --header 'Cookie: gdriveid="+todown.gdriveid+";' '"+file.downurl+"'\n"; 
+        if (file.downurl) str += "aria2c -c -s10 -x10 --out '"+TLE.escape_command(file.title)+"' --header 'Cookie: gdriveid="+todown.gdriveid+";' '"+file.downurl+"'\n"; 
       });
     });
     TLE.text_pop("aria2 download command", str);
